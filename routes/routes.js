@@ -48,6 +48,17 @@ const router = app => {
 	        response.send('User updated successfully.');
 	    });
 	});
+					
+	// Delete a user
+	app.delete('/users/:id', (request, response) => {
+	    const id = request.params.id;
+	 
+	    pool.query('DELETE FROM users WHERE id = ?', id, (error, result) => {
+	        if (error) throw error;
+	 
+	        response.send('User deleted.');
+	    });
+	});
 
 });
 }
