@@ -1,7 +1,9 @@
 // Load the MySQL pool connection
 const pool = require('../data/config');
 
+// Route the app
 const router = app => {
+	// Display welcome message on the root
     app.get('/', (request, response) => {
         response.send({
             message: 'Node.js and Express REST API'
@@ -15,6 +17,18 @@ const router = app => {
  
         response.send(result);
     });
+
+	// Display a single user by ID
+	app.get('/users/:id', (request, response) => {
+	    const id = request.params.id;
+	 
+	    pool.query('SELECT * FROM users WHERE id = ?', id, (error, result) => {
+	        if (error) throw error;
+	 
+	        response.send(result);
+	    });
+	});
+	
 });
 }
 
