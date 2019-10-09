@@ -1,25 +1,22 @@
+// Load the MySQL pool connection
+const pool = require('../data/config');
+
 const router = app => {
     app.get('/', (request, response) => {
         response.send({
             message: 'Node.js and Express REST API'
         });
     });
+	
+	// Display all users
     app.get('/users', (request, response) => {
-        response.send(users);
+    pool.query('SELECT * FROM users', (error, result) => {
+        if (error) throw error;
+ 
+        response.send(result);
     });
+});
 }
-
-const users = [{
-    id: 1,
-    name: "Scott McKenzie",
-    email: "Scott@McKenzie.com",
-},
-{
-    id: 2,
-    name: "Test User 2",
-    email: "TestUser2@Test.com",
-},
-];
 
 // Export the router
 module.exports = router;
