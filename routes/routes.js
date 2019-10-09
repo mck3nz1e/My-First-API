@@ -46,7 +46,7 @@ const router = app => {
 	        if (error) throw error;
 	 
 	        response.send('User updated successfully.');
-	    });
+	    });  
 	});
 					
 	// Delete a user
