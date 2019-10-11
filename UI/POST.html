@@ -9,12 +9,15 @@
 </head>
  
 <body>
-    <form action="http://localhost:3002/users" method="get">
+    <form action="http://localhost:3002/users" method="post">
 
 <label for="name">Name</label>
         
         <input type="submit">
-
+        <input type="text" name="name">
+      	<label for="email">Email</label>
+   		<input type="email" name="email">
+       	<input type="submit">
 
     </form>
 </body>
