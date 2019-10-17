@@ -6,7 +6,7 @@ const router = app => {
 	// Display welcome message on the root
     app.get('/', (request, response) => {
         response.send({
-            message: 'Node.js and Express REST API by Scott McKenzie'
+            message: 'Node.js and Express REST API by Scott McKenzie. Pre-Reqs: Node.js & npm are installed globally on the computer, MySQL is installed and GUI software to view the database is installed (MySQL Workbench)'
         });
     });
 	
