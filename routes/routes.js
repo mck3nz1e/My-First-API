@@ -6,7 +6,7 @@ const router = app => {
 	// Display welcome message on the root
     app.get('/', (request, response) => {
         response.send({
-            message: 'Node.js and Express REST API'
+            message: 'Node.js and Express REST API by Scott McKenzie'
         });
     });
 	
